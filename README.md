@@ -41,7 +41,23 @@ Start PostgreSQL prompt by using the command:
 
     psql
     
+### Configure remote Connection (Optional)
 
+To enable remote connections, edit PostgreSQL configuration file:
+
+    sudo nano /etc/postgresql/12/main/postgresql.conf 
+
+change the Listen address to accept connections within your networks.
+
+    # Listen on all interfaces
+    listen_addresses = '*'
+    
+    # Listen on specified private IP address
+    listen_addresses = '192.168.18.119'
+    
+After the change, restart postgresql service.
+
+    sudo systemctl restart postgresql
 
 
     
